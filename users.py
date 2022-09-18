@@ -25,3 +25,21 @@ class Users:
         query = "INSERT INTO esquema_usuarios.users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(email)s , NOW() , NOW() );"
 
         return connectToMySQL('esquema_usuarios').query_db( query, data )
+    
+    @classmethod
+    def delete(cls, data ):
+        query = "DELETE FROM esquema_usuarios.users WHERE ( users.id = %(id)s) ;"
+
+        return connectToMySQL('esquema_usuarios').query_db( query, data )
+    
+    @classmethod
+    def seleccionar(cls, data ):
+        query = "SELECT * FROM esquema_usuarios.users WHERE ( users.id = %(id)s) ;"
+
+        return connectToMySQL('esquema_usuarios').query_db( query, data )
+    
+    @classmethod
+    def edit(cls, data ):
+        query = "UPDATE esquema_usuarios.users SET first_name = %(fname)s, last_name = %(lname)s, email = %(email)s, updated_at = NOW() WHERE ( users.id = %(id)s) ;"
+
+        return connectToMySQL('esquema_usuarios').query_db( query, data )
