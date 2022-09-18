@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Usuarios CR</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10%;
+        }
+        .form{
+            margin-top: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        label{
+            margin-top: 5px;
+        }
+        .usuario{
+            margin-bottom: 20px;
+        }
+        select{
+            width: 45%;
+        }
+        input[type=text], input[type=email]{
+            width: 70%;
+            display: block;
+        }
+        input[type=submit]{
+            float: left;
+            color: white;
+            background-color: #76a5b0;
+            box-shadow: 2px 2px black;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container w-100 mt-2" style="height: 500px;">
+            <header>
+                <h1>Add a New User</h1>
+                <a href="/users">Home</a>
+            </header>
+            <form  class="form" action="/enviar" method="post">
+                <div class="usuario">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname" id="fname">
+                </div>
+                <div class="usuario">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" id="lname">
+                </div>
+                <div class="usuario">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
