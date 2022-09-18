@@ -5,7 +5,7 @@ from users import Users
 app = Flask(__name__)
 @app.route("/users/new")
 def index():
-    # llamar al método de clase get all para obtener todos los amigos
+    # llamar al método de clase get all para obtener todos los usuarios
     usuarios = Users.get_all()
     print(usuarios)
     return render_template("leer.html", usuarios = usuarios)
@@ -19,7 +19,7 @@ def create_user():
         "lname" : request.form["lname"],
         "email" : request.form["email"]
     }
-    # Pasamos el diccionario de datos al método save de la clase Friend
+    # Pasamos el diccionario de datos al método save de la clase Users
     Users.save(data)
     # No olvides redirigir después de guardar en la base de datos
     return redirect('/users') 
